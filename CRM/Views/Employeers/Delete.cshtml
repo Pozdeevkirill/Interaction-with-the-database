@@ -1,0 +1,31 @@
+﻿@using Models
+@{
+    ViewData["Title"] = "Delete";
+}
+@model EmployeeViewModel 
+
+<h1 class="text-center">Удаление сотрудника</h1>
+
+<form method="post" class="mt-3 form-group row justify-content-center" asp-action="Delete" asp-controller="Employeers">
+    <div class="col-12 col-sm-9 col-lg-6 border m-auto p-4 card-header">
+        <div class="form-group row justify-content-center card-header">
+            <h1 class="font-weight-bold text-center col-form-label control-label">Имя: <span class="font-weight-lighter">@Model.Name</span></h1>
+        </div>
+        <div class="form-group row justify-content-center card-header">
+            <h1 class="font-weight-bold text-center col-form-label control-label">Почта: <span class="font-weight-lighter">@Model.Email</span></h1>
+        </div>
+        <div class="form-group row justify-content-center card-header">
+            <h1 class="font-weight-bold text-center col-form-label control-label">Адрес: <span class="font-weight-lighter">@Model.Address</span></h1>
+        </div>
+        <div class="form-group row justify-content-center card-header">
+            <h1 class="font-weight-bold text-center col-form-label control-label">Специальность: <span class="font-weight-lighter">@Model.Departament</span></h1>
+        </div>
+        <div class="text-center card-text mt-3">
+            <h5>Вы уверены что хотите удалить - @Model.Name?</h5>
+            <div method="post" class="justify-content-center">
+                <button type="submit" class="btn btn-danger">Yes</button>
+                <a class="btn btn-success" asp-controller="Home" asp-action="Index">No</a>
+            </div>
+        </div>
+    </div>
+</form>

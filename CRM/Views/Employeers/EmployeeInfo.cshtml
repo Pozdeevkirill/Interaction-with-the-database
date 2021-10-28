@@ -1,0 +1,42 @@
+﻿@using Models
+@model EmployeeViewModel 
+@{ 
+    ViewData["Title"] = Model.Name;
+}
+
+<h1 class="text-center">Информация о @Model.Name</h1>
+<form action="/" method="post">
+    <div class="m-auto col-lg-10 border m-3  card-header">
+        <div class="cardHeaderStyle">
+            <div class="form-group row">
+                <label class="col col-lg-4 col-form-label text-right control-label font-weight-bold">ФИО:</label>
+                <div class="col col-lg-6">
+                    <span type="text" asp-for="Name" class="form-control">@Model.Name</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col col-lg-4 col-form-label text-right control-label font-weight-bold">Почта:</label>
+                <div class="col col-lg-6">
+                    <span type="text" asp-for="Name" class="form-control">@Model.Email</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col col-lg-4 col-form-label text-right control-label font-weight-bold">Адрес:</label>
+                <div class="col col-lg-6">
+                    <span type="text" asp-for="Name" class="form-control">@Model.Address</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col col-lg-4 col-form-label text-right control-label font-weight-bold">Отдел:</label>
+                <div class="col col-lg-6">
+                    <span type="text" asp-for="Name" class="form-control">@Model.Departament</span>
+                </div>
+            </div>
+            <div class="text-center">
+                <a asp-controller="Employeers" asp-action="GetInfo" class="btn btn-secondary m-2 buttonShadow">Back</a>
+                <a asp-controller="Employeers" asp-action="Edit" asp-route-ID="@Model.Id" class="btn btn-primary m-2 buttonShadow">Edit</a>
+                <a asp-controller="Employeers" asp-action="Delete" asp-route-ID="@Model.Id" class="btn btn-danger m-2 buttonShadow">Delete</a>
+            </div>
+        </div>
+    </div>
+</form>
